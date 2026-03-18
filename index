@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>XR Escena</title>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+
+```
+  <!-- 📦 Assets -->
+  <a-assets>
+    <!-- Cambia aquí si usas Optimus -->
+    <a-asset-item id="modelo" src="bandablend.glb"></a-asset-item>
+  </a-assets>
+
+  <!-- 🧍 Cámara con movimiento -->
+  <a-entity position="0 1.6 3">
+    <a-camera wasd-controls look-controls></a-camera>
+  </a-entity>
+
+  <!-- 🌍 Iluminación -->
+  <a-light type="ambient" intensity="0.6"></a-light>
+  <a-light type="directional" position="2 4 2" intensity="0.8"></a-light>
+
+  <!-- 🧱 PISO -->
+  <a-plane rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+
+  <!-- 🧱 PAREDES -->
+  <!-- Fondo -->
+  <a-box position="0 2 -5" depth="0.2" height="4" width="10" color="#FF6B6B"></a-box>
+  <!-- Frente -->
+  <a-box position="0 2 5" depth="0.2" height="4" width="10" color="#4ECDC4"></a-box>
+  <!-- Izquierda -->
+  <a-box position="-5 2 0" depth="10" height="4" width="0.2" color="#FFD93D"></a-box>
+  <!-- Derecha -->
+  <a-box position="5 2 0" depth="10" height="4" width="0.2" color="#6A4C93"></a-box>
+
+  <!-- 🧱 TECHO -->
+  <a-plane position="0 4 0" rotation="90 0 0" width="10" height="10" color="#CCCCCC"></a-plane>
+
+  <!-- 🤖 MODELO EN EL CENTRO -->
+  <a-entity 
+    gltf-model="#modelo" 
+    position="0 0 -1" 
+    scale="1 1 1">
+  </a-entity>
+
+  <!-- 🛢️ TANQUES (cilindros) -->
+  <!-- Izquierda -->
+  <a-cylinder position="-2 1 -2" radius="0.5" height="2" color="#888"></a-cylinder>
+
+  <!-- Derecha -->
+  <a-cylinder position="2 1 -2" radius="0.5" height="2" color="#888"></a-cylinder>
+
+  <!-- 🌌 Fondo -->
+  <a-sky color="#ECECEC"></a-sky>
+
+</a-scene>
+```
+
+  </body>
+</html>
